@@ -1,0 +1,5 @@
+Коды скриптов
+====================
+
+.. autofunction:: claimForecast.main
+
