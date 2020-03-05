@@ -1,5 +1,5 @@
 
-Коды скриптов Python, CWL, Dockerfile, terraform
+Коды
 ================================================
 
 .. autofunction:: claimForecast.main

@@ -1,7 +1,7 @@
 .. WVproject documentation master file, created by
    sphinx-quickstart on Sat Feb 15 01:15:05 2020.
 
-Проект Webvorks
+Проект WVproject
 ===========================================
 
 .. toctree::
@@ -9,8 +9,10 @@
    :caption: Contents:
 
    introduction
-   code
    model
+   code
+   data
+
 
 Индексы и таблицы
 ==================
