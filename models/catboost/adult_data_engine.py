@@ -19,7 +19,7 @@ class AbstractDataEngine(ABC):
 class AdultDataEngine(AbstractDataEngine):
     def __init__(self, train_file, test_file):
         """
-        При инициализации в случае неуспеха возвращает исключние от  pandas.read_csv()
+        При инициализации в случае неуспеха возвращает исключение от  pandas.read_csv()
         :param train_file: path файла с обучающей выборкой
         :param test_file: path файла с тестовой  выборкой
         """

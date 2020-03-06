@@ -2,18 +2,20 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../../client'))
+sys.path.insert(0, os.path.abspath('../../models/catboost'))
 
 # sys.path.insert(0, os.path.abspath("/home/sergey/anaconda3/envs/WVproject/lib/python3.7/site-packages"))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sphinx-Themes template'
-copyright = '2018, sphinx-themes.org'
-author = 'sphinx-themes.org'
+project = 'WVproject'
+copyright = '2020.03'
+author = 'SergeyBridge'
 
 # The short X.Y version
 version = ''
@@ -51,7 +53,10 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # The master toctree document.
 master_doc = 'index'
