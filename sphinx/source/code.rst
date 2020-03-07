@@ -2,10 +2,13 @@
 Коды
 ================================================
 
-.. autofunction:: claimForecast.main
+# .. autofunction:: claimForecast.main
 
 
-.. automodule:: adult_data_engine
+.. automodule:: catboost_data_engine
     :members:
 
-.. autofunction:: test1.func1
+
+# .. autofunction:: test1.func1
+
+# .. autoclass:: catboost_data_engine.AbstractDataEngine

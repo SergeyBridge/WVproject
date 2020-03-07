@@ -4,6 +4,14 @@ from abc import ABC, abstractmethod, abstractproperty
 
 
 class AbstractDataEngine(ABC):
+    """
+    абстрактный класс для всех источников данных и всех моделей\n
+    дополнительные методы для конкретной модели реализуются  в конкретном классе
+    todo Юниттесты для источников данных
+
+    """
+
+    # todo Юниттесты для истоочников данных
 
     @property
     @abstractmethod

@@ -149,38 +149,36 @@
             
   <div class="section" id="id1">
 <h1>Коды<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
-<dl class="function">
-<dt id="claimForecast.main">
-<code class="sig-prename descclassname">claimForecast.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">ytarget</em><span class="sig-paren">)</span><a class="headerlink" href="#claimForecast.main" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Function main takes 1 parameter:</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>ytarget</strong> – float,
-list of floats [float[, float]]
-.csv file name with floats, separated by commas</p>
-</dd>
-<dt class="field-even">Результат</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
+<p># .. autofunction:: claimForecast.main</p>
+<span class="target" id="module-catboost_data_engine"></span><dl class="class">
+<dt id="catboost_data_engine.AbstractDataEngine">
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AbstractDataEngine</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine" title="Ссылка на это определение">¶</a></dt>
+<dd><p>абстрактный класс для всех источников данных и всех моделей</p>
+<p>дополнительные методы для конкретной модели реализуются  в конкретном классе
+todo Юниттесты для источников данных</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="test1.func1">
-<code class="sig-prename descclassname">test1.</code><code class="sig-name descname">func1</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#test1.func1" title="Ссылка на это определение">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>arg1</strong> – </p></li>
-<li><p><strong>arg2</strong> – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Результат</dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
+<dl class="class">
+<dt id="catboost_data_engine.AdultDataEngine">
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AdultDataEngine</code><span class="sig-paren">(</span><em class="sig-param">train_file</em>, <em class="sig-param">test_file</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.AdultDataEngine" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="method">
+<dt id="catboost_data_engine.AdultDataEngine.get_test_df">
+<em class="property">property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_test_df" title="Ссылка на это определение">¶</a></dt>
+<dd><p>property, всегда существует и корректно возвращает
+:return: pandas.DataFrame с тестовой выборкой</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="catboost_data_engine.AdultDataEngine.get_train_df">
+<em class="property">property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_train_df" title="Ссылка на это определение">¶</a></dt>
+<dd><p>property, всегда существует и корректно возвращает
+:return: pandas.DataFrame с обучающей выборкой</p>
+</dd></dl>
+
+</dd></dl>
+
+<p># .. autofunction:: test1.func1</p>
+<p># .. autoclass:: catboost_data_engine.AbstractDataEngine</p>
 </div>
 
 
