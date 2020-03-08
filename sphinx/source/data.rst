@@ -16,15 +16,15 @@
 
 .. jupyter-execute::
 
-    paid = data['stat_delivery_is_paid'].count()
-    returned = data['stat_delivery_is_return'].count()
+    p = data['stat_delivery_is_paid'].count()
+    r = data['stat_delivery_is_return'].count()
 
-    p = data['stat_delivery_is_paid']
-    r = data['stat_delivery_is_return']
-
-    series = pd.Series(data=[paid, returned, paid+returned,
-                             data.shape[0], paid+returned - data.shape[0]])
-    series.index = ["p", "r", "p+r", "всего данных", "где то потерялось "]
+    series = pd.Series(data={"p": p,
+                              "r": r,
+                              "p+r": p+r,
+                              "всего данных": data.shape[0],
+                              "где-то потерялось": p+r-data.shape[0]})
 
     print(series)
+
 

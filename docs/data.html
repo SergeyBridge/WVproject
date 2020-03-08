@@ -151,24 +151,23 @@
 <div class="docutils container">
 </div>
 <div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paid</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_paid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">returned</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_paid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<span class="n">p</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_paid&#39;</span><span class="p">]</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_return&#39;</span><span class="p">]</span>
-
-<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">paid</span><span class="p">,</span> <span class="n">returned</span><span class="p">,</span> <span class="n">paid</span><span class="o">+</span><span class="n">returned</span><span class="p">,</span>
-                         <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">paid</span><span class="o">+</span><span class="n">returned</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">series</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;p+r&quot;</span><span class="p">,</span> <span class="s2">&quot;всего данных&quot;</span><span class="p">,</span> <span class="s2">&quot;где то потерялось &quot;</span><span class="p">]</span>
+<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+                          <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span>
+                          <span class="s2">&quot;p+r&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">,</span>
+                          <span class="s2">&quot;всего данных&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                          <span class="s2">&quot;где-то потерялось&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>p                     6808
-r                     1796
-p+r                   8604
-всего данных          8632
-где то потерялось      -28
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>p                    6808
+r                    1796
+p+r                  8604
+всего данных         8632
+где-то потерялось     -28
 dtype: int64
 </pre></div>
 </div>
