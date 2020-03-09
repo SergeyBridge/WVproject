@@ -5,10 +5,8 @@ from abc import ABC, abstractmethod, abstractproperty
 
 class AbstractDataEngine(ABC):
     """
-    абстрактный класс для всех источников данных и всех моделей\n
-    дополнительные методы для конкретной модели реализуются  в конкретном классе\n
-    todo Юниттесты для источников данных
-
+    - абстрактный класс для всех источников данных и всех моделей
+    дополнительные методы для конкретной модели реализуются  в конкретном классе
     """
 
     # todo Юниттесты для истоочников данных
@@ -16,11 +14,15 @@ class AbstractDataEngine(ABC):
     @property
     @abstractmethod
     def get_train_df(self):
+        """
+        """
         pass
 
     @property
     @abstractmethod
     def get_test_df(self):
+        """
+        """
         pass
 
 
@@ -28,6 +30,7 @@ class AdultDataEngine(AbstractDataEngine):
     def __init__(self, train_file, test_file):
         """
         При инициализации в случае неуспеха возвращает исключение от  pandas.read_csv()
+
         :param train_file: path файла с обучающей выборкой
         :param test_file: path файла с тестовой  выборкой
         """
@@ -45,7 +48,6 @@ class AdultDataEngine(AbstractDataEngine):
     @property
     def get_train_df(self):
         """
-        property, всегда существует и корректно возвращает
         :return: pandas.DataFrame с обучающей выборкой
         """
         return self.train
@@ -53,7 +55,7 @@ class AdultDataEngine(AbstractDataEngine):
     @property
     def get_test_df(self):
         """
-        property, всегда существует и корректно возвращает
+
         :return: pandas.DataFrame с тестовой выборкой
         """
         return self.test

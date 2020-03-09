@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Коды &mdash; документация WVproject 1</title>
+  <title>Коды &mdash; WVproject 1 documentation</title>
   
 
   
@@ -28,14 +28,16 @@
   
 
   
+    <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   
 
   
-        <link rel="index" title="Алфавитный указатель"
+        <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Поиск" href="search.html"/>
-    <link rel="top" title="документация WVproject 1" href="index.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="WVproject 1 documentation" href="index.html"/>
         <link rel="next" title="Данные" href="data.html"/>
         <link rel="prev" title="Модель" href="model.html"/> 
 
@@ -147,38 +149,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>Коды<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
-<p># .. autofunction:: claimForecast.main</p>
-<span class="target" id="module-catboost_data_engine"></span><dl class="class">
+  <div class="section" id="module-catboost_data_engine">
+<span id="id1"></span><h1>Коды<a class="headerlink" href="#module-catboost_data_engine" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
 <dt id="catboost_data_engine.AbstractDataEngine">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AbstractDataEngine</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine" title="Ссылка на это определение">¶</a></dt>
-<dd><p>абстрактный класс для всех источников данных и всех моделей</p>
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AbstractDataEngine</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><p>абстрактный класс для всех источников данных и всех моделей</p></li>
+</ul>
 <p>дополнительные методы для конкретной модели реализуются  в конкретном классе</p>
-<p>todo Юниттесты для источников данных</p>
+<dl class="method">
+<dt id="catboost_data_engine.AbstractDataEngine.get_test_df">
+<em class="property">abstract property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.get_test_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="catboost_data_engine.AbstractDataEngine.get_train_df">
+<em class="property">abstract property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.get_train_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="catboost_data_engine.AdultDataEngine">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AdultDataEngine</code><span class="sig-paren">(</span><em class="sig-param">train_file</em>, <em class="sig-param">test_file</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.AdultDataEngine" title="Ссылка на это определение">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AdultDataEngine</code><span class="sig-paren">(</span><em class="sig-param">train_file</em>, <em class="sig-param">test_file</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.AdultDataEngine" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="catboost_data_engine.AdultDataEngine.get_test_df">
-<em class="property">property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_test_df" title="Ссылка на это определение">¶</a></dt>
-<dd><p>property, всегда существует и корректно возвращает
-:return: pandas.DataFrame с тестовой выборкой</p>
+<em class="property">property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_test_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>return: pandas.DataFrame с тестовой выборкой</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="catboost_data_engine.AdultDataEngine.get_train_df">
-<em class="property">property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_train_df" title="Ссылка на это определение">¶</a></dt>
-<dd><p>property, всегда существует и корректно возвращает
-:return: pandas.DataFrame с обучающей выборкой</p>
+<em class="property">property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_train_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>return: pandas.DataFrame с обучающей выборкой</p>
 </dd></dl>
 
 </dd></dl>
 
-<p># .. autofunction:: test1.func1</p>
-<p># .. autoclass:: catboost_data_engine.AbstractDataEngine</p>
 </div>
 
 
@@ -232,9 +240,12 @@
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+      <script type="text/javascript" src="None"></script>
 
   
 

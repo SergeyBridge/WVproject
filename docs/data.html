@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Данные &mdash; документация WVproject 1</title>
+  <title>Данные &mdash; WVproject 1 documentation</title>
   
 
   
@@ -28,14 +28,16 @@
   
 
   
+    <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   
 
   
-        <link rel="index" title="Алфавитный указатель"
+        <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Поиск" href="search.html"/>
-    <link rel="top" title="документация WVproject 1" href="index.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="WVproject 1 documentation" href="index.html"/>
         <link rel="prev" title="Коды" href="code.html"/> 
 
   
@@ -147,18 +149,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>Данные<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<h1>Данные<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="docutils container">
 </div>
 <div class="jupyter_container docutils container">
 <div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_paid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
-                          <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span>
-                          <span class="s2">&quot;p+r&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">,</span>
-                          <span class="s2">&quot;всего данных&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                          <span class="s2">&quot;где-то потерялось&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span>
+<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+    <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span>
+    <span class="s2">&quot;p+r&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">,</span>
+    <span class="s2">&quot;всего данных&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s2">&quot;где-то потерялось&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">})</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
 </pre></div>
@@ -223,9 +227,12 @@ dtype: int64
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+      <script type="text/javascript" src="None"></script>
 
   
 

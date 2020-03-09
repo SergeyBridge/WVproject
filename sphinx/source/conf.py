@@ -8,6 +8,8 @@ sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../../client'))
 sys.path.insert(0, os.path.abspath('../../models/catboost'))
 
+os.environ['PYTHONPATH'] = ':'.join(('../../models', os.environ.get('PYTHONPATH', '')))
+
 # sys.path.insert(0, os.path.abspath("/home/sergey/anaconda3/envs/WVproject/lib/python3.7/site-packages"))
 
 
@@ -38,6 +40,11 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'jupyter_sphinx.execute',
+    'nbsphinx',
+    'sphinx.ext.mathjax',
+    'sphinx_copybutton',
+    'sphinxcontrib.rsvgconverter',
+
 ]
 
 # Napoleon settings
@@ -66,7 +73,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'ru'
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
