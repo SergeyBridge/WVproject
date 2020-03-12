@@ -159,13 +159,13 @@
 </ul>
 <p>дополнительные методы для конкретной модели реализуются  в конкретном классе</p>
 <dl class="method">
-<dt id="catboost_data_engine.AbstractDataEngine.get_test_df">
-<em class="property">abstract property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.get_test_df" title="Permalink to this definition">¶</a></dt>
+<dt id="catboost_data_engine.AbstractDataEngine.test_df">
+<em class="property">abstract property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.test_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="catboost_data_engine.AbstractDataEngine.get_train_df">
-<em class="property">abstract property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.get_train_df" title="Permalink to this definition">¶</a></dt>
+<dt id="catboost_data_engine.AbstractDataEngine.train_df">
+<em class="property">abstract property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.train_df" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -174,14 +174,14 @@
 <dt id="catboost_data_engine.AdultDataEngine">
 <em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AdultDataEngine</code><span class="sig-paren">(</span><em class="sig-param">train_file</em>, <em class="sig-param">test_file</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.AdultDataEngine" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="catboost_data_engine.AdultDataEngine.get_test_df">
-<em class="property">property </em><code class="sig-name descname">get_test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_test_df" title="Permalink to this definition">¶</a></dt>
+<dt id="catboost_data_engine.AdultDataEngine.test_df">
+<em class="property">property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.test_df" title="Permalink to this definition">¶</a></dt>
 <dd><p>return: pandas.DataFrame с тестовой выборкой</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="catboost_data_engine.AdultDataEngine.get_train_df">
-<em class="property">property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.get_train_df" title="Permalink to this definition">¶</a></dt>
+<dt id="catboost_data_engine.AdultDataEngine.train_df">
+<em class="property">property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.train_df" title="Permalink to this definition">¶</a></dt>
 <dd><p>return: pandas.DataFrame с обучающей выборкой</p>
 </dd></dl>
 
@@ -189,13 +189,13 @@
 
 <dl class="class">
 <dt id="catboost_data_engine.RealDataEngineCatboost">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">RealDataEngineCatboost</code><span class="sig-paren">(</span><em class="sig-param">data_file</em>, <em class="sig-param">fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">RealDataEngineCatboost</code><span class="sig-paren">(</span><em class="sig-param">data_file</em>, <em class="sig-param">test_fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li><dl class="simple">
 <dt>Источник данных между real и моделями Catboost</dt><dd><ul>
 <li><p>При инициализации в случае неуспеха возвращает исключение от  pandas.read_csv()</p></li>
-<li><p>Делит выборку на обучающую и контрольную примерно <strong>1/fraction</strong> датчиком случайных величин</p></li>
-<li><p>т.к. используется кросс-валидация, тестовая выборка не создается</p></li>
+<li><p>Делит выборку на обучающую и контрольную <strong>1/test_fraction</strong> датчиком случайных величин</p></li>
+<li><p>делает бинарную метку y_target</p></li>
 </ul>
 </dd>
 </dl>
@@ -207,8 +207,8 @@
 </dd>
 </dl>
 <dl class="method">
-<dt id="catboost_data_engine.RealDataEngineCatboost.get_train_df">
-<em class="property">property </em><code class="sig-name descname">get_train_df</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.get_train_df" title="Permalink to this definition">¶</a></dt>
+<dt id="catboost_data_engine.RealDataEngineCatboost.test_df">
+<em class="property">property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.test_df" title="Permalink to this definition">¶</a></dt>
 <dd><p>return: pandas.DataFrame с обучающей выборкой</p>
 </dd></dl>
 
@@ -216,6 +216,12 @@
 <dt id="catboost_data_engine.RealDataEngineCatboost.test_pool">
 <em class="property">property </em><code class="sig-name descname">test_pool</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.test_pool" title="Permalink to this definition">¶</a></dt>
 <dd><p>return: Pool с тестовой выборкой, меткой и категориальными признаками</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="catboost_data_engine.RealDataEngineCatboost.train_df">
+<em class="property">property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.train_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>return: pandas.DataFrame с обучающей выборкой</p>
 </dd></dl>
 
 <dl class="method">
