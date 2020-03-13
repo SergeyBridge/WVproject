@@ -1,7 +1,11 @@
-
 Коды
-================================================
+======
 
-.. automodule:: catboost_data_engine
-    :members:
+.. toctree::
+    :hidden:
+    :maxdepth: 2
+    :caption: Contents:
+
+    catboost
+
 

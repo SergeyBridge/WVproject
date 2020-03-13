@@ -38,7 +38,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="WVproject 1 documentation" href="index.html"/>
-        <link rel="next" title="Данные" href="data.html"/>
+        <link rel="next" title="Catboost model" href="catboost.html"/>
         <link rel="prev" title="Модель" href="model.html"/> 
 
   
@@ -89,7 +89,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Вступление</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Модель</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Коды</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Коды</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="catboost.html">Catboost model</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Данные</a></li>
 </ul>
 
@@ -149,95 +152,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-catboost_data_engine">
-<span id="id1"></span><h1>Коды<a class="headerlink" href="#module-catboost_data_engine" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="catboost_data_engine.AbstractDataEngine">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AbstractDataEngine</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li><p>абстрактный класс для всех источников данных и всех моделей</p></li>
-</ul>
-<p>дополнительные методы для конкретной модели реализуются  в конкретном классе</p>
-<dl class="method">
-<dt id="catboost_data_engine.AbstractDataEngine.test_df">
-<em class="property">abstract property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.test_df" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="catboost_data_engine.AbstractDataEngine.train_df">
-<em class="property">abstract property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.AbstractDataEngine.train_df" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="catboost_data_engine.AdultDataEngine">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">AdultDataEngine</code><span class="sig-paren">(</span><em class="sig-param">train_file</em>, <em class="sig-param">test_file</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.AdultDataEngine" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="catboost_data_engine.AdultDataEngine.test_df">
-<em class="property">property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.test_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>return: pandas.DataFrame с тестовой выборкой</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="catboost_data_engine.AdultDataEngine.train_df">
-<em class="property">property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.AdultDataEngine.train_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>return: pandas.DataFrame с обучающей выборкой</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="catboost_data_engine.RealDataEngineCatboost">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">RealDataEngineCatboost</code><span class="sig-paren">(</span><em class="sig-param">data_file</em>, <em class="sig-param">test_fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li><dl class="simple">
-<dt>Источник данных между real и моделями Catboost</dt><dd><ul>
-<li><p>При инициализации в случае неуспеха возвращает исключение от  pandas.read_csv()</p></li>
-<li><p>Делит выборку на обучающую и контрольную <strong>1/test_fraction</strong> датчиком случайных величин</p></li>
-<li><p>делает бинарную метку y_target</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data_file</strong> – path файла с выборкой,</p>
-</dd>
-</dl>
-<dl class="method">
-<dt id="catboost_data_engine.RealDataEngineCatboost.test_df">
-<em class="property">property </em><code class="sig-name descname">test_df</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.test_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>return: pandas.DataFrame с обучающей выборкой</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="catboost_data_engine.RealDataEngineCatboost.test_pool">
-<em class="property">property </em><code class="sig-name descname">test_pool</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.test_pool" title="Permalink to this definition">¶</a></dt>
-<dd><p>return: Pool с тестовой выборкой, меткой и категориальными признаками</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="catboost_data_engine.RealDataEngineCatboost.train_df">
-<em class="property">property </em><code class="sig-name descname">train_df</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.train_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>return: pandas.DataFrame с обучающей выборкой</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="catboost_data_engine.RealDataEngineCatboost.train_pool">
-<em class="property">property </em><code class="sig-name descname">train_pool</code><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.train_pool" title="Permalink to this definition">¶</a></dt>
-<dd><p>Объект Pool - это внутренний формат данных для catboost, DataEngine преобразует данные в этот формат
-Сейчас Pool создаётся в оперативной памяти, при необходимости можно сделать файлом</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Pool с обучающей выборкой, меткой и категориальными признаками</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="id1">
+<h1>Коды<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
 
@@ -247,7 +165,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="data.html" class="btn btn-neutral float-right" title="Данные" accesskey="n">Next →</a>
+        <a href="catboost.html" class="btn btn-neutral float-right" title="Catboost model" accesskey="n">Next →</a>
       
       
         <a href="model.html" class="btn btn-neutral" title="Модель" accesskey="p">← Previous</a>
