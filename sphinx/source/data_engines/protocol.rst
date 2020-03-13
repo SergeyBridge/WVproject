@@ -1,5 +1,5 @@
-Данные
-====================
+Протокол
+==========
 
 .. jupyter-execute::
     :hide-code:
@@ -9,9 +9,7 @@
 
     path = "/home/sergey/mnt/st1500/Usr/Sergey/TheJob/clientsProjects/data/Webvork/real_2019-12-01-2019-12-31.csv"
 
-    data = pd.read_csv(path, sep=";", )
-
-
+    data = pd.read_csv(path, sep=";", low_memory=False)
 
 
 .. jupyter-execute::

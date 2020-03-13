@@ -152,27 +152,312 @@
 <h1>Данные<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="docutils container">
 </div>
-<div class="jupyter_container docutils container">
-<div class="code_cell highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_paid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stat_delivery_is_return&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span># 
+# type: обязательный
+#  - &#39;num&#39; - скаляр, т.е. возможно сравнение на больше-меньше
+#  - &#39;datetime&#39; - дата и время, округляем до минут, но если минут нет, например, только часы, то до максимальной оставшейся точности
+#  - &#39;string&#39; - признак, категориальный, для которого нет метрики сравнения, например id оператора
+#  - &#39;Na&#39; - not applied, не участвует (пока) в анализе, например, название улицы 
+#   
+# min_val: необязательный - минимально возможное значение для скаляра, если не скаляр, должен быть опущен или == &#39;Na&#39;  если не определен или Na, то не проверяется
+#  - &#39;Na&#39;
+#   
+# max_val: необязательный, аналогично min_val
+#  
 
-<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
-    <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span>
-    <span class="s2">&quot;p+r&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="p">,</span>
-    <span class="s2">&quot;всего данных&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="s2">&quot;где-то потерялось&quot;</span><span class="p">:</span> <span class="n">p</span><span class="o">+</span><span class="n">r</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>p                    6808
-r                    1796
-p+r                  8604
-всего данных         8632
-где-то потерялось     -28
-dtype: int64
+- order_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_created_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_processed_user_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_confirmed_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_confirmed_user_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_callback_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_lead_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_operator_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_rejection_reason:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_invalid_reason:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_country:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_country_ip:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_country_phone:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_region:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_city:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_delivery_price:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_payment_method:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_phone_geocoder:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_phone_valid:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_status_order:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_is_valid:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_is_call_fail:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_valid_error:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_webmaster_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_offer_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_landing_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_prelanding_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_money:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_count_call:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_last_call_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_count_callback:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_good_count:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_phone_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_utm_source:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_utm_medium:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_utm_campaign:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_utm_content:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_utm_term:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_is_prepay:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_landing_price:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_landing_currency:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_time_before_open_form:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_account_manager_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_order_unique_goods:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_in_stock_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_cancel_in_stock_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_paid_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_return_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_good_count:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_is_paid:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_is_return:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_delivery_status:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_manager_id:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_exception:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_finance_revise_ts:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_discount:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_discount_eur:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_operator_status:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- stat_delivery_google_and_operator_address_match:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_name:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_surname:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_additional_phone:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_age:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_age_unknown:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_client_sex:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_country:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_region:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_city:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_street:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_house:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_housing:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_apartment:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
+- order_address_zip_code:
+  - type: Na
+  - min_val: Na
+  - max_val: Na
 </pre></div>
 </div>
 </div>
