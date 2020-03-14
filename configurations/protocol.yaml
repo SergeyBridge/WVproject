@@ -1,0 +1,446 @@
+#
+# description: обязательный
+#  - строка, непустая, описание параметра, в расчетах не участвует, не проверяется
+#
+# type: обязательный
+#  - 'num' - скаляр, т.е. возможно сравнение на больше-меньше
+#  - 'datetime' - дата и время, округляем до минут, но если минут нет, например, только часы, то до максимальной оставшейся точности
+#  - 'string' - признак, категориальный, для которого нет метрики сравнения, например id оператора
+#  - 'Na' - not applied, не участвует (пока) в анализе, например, название улицы
+#
+# min_val: необязательный - минимально возможное значение для скаляра, если не скаляр, должен быть опущен или == 'Na'  если не определен или Na, то не проверяется
+#  - 'Na'
+#
+# max_val: необязательный, аналогично min_val
+#
+# error: обязательный - возвращаемая ошибка сервера, содержит имя параметра, для которого вызвана, например order_id, и причину, напр. typerror
+#
+
+protocol:
+  - !fields
+    order_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_created_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_processed_user_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_confirmed_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_confirmed_user_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_callback_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_lead_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_operator_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_rejection_reason:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_invalid_reason:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_country:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_country_ip:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_country_phone:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_region:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_city:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_delivery_price:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_payment_method:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_phone_geocoder:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_phone_valid:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_status_order:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_is_valid:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_is_call_fail:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_valid_error:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_webmaster_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_offer_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_landing_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_prelanding_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_money:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_count_call:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_last_call_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_count_callback:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_good_count:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_phone_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_utm_source:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_utm_medium:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_utm_campaign:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_utm_content:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_utm_term:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_is_prepay:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_landing_price:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_landing_currency:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_time_before_open_form:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_account_manager_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_order_unique_goods:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_in_stock_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_cancel_in_stock_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_paid_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_return_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_good_count:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_delivery_status:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_manager_id:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_exception:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_finance_revise_ts:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_discount:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_discount_eur:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_operator_status:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    stat_delivery_google_and_operator_address_match:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_name:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_surname:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_additional_phone:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_age:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_age_unknown:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_client_sex:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_country:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_region:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_city:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_street:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_house:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_housing:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_apartment:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
+    order_address_zip_code:
+      - description: Na
+      - type: Na
+      - min_val: Na
+      - max_val: Na
+      - error: Na
