@@ -190,7 +190,7 @@
 
 <dl class="class">
 <dt id="catboost_data_engine.RealDataEngineCatboost">
-<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">RealDataEngineCatboost</code><span class="sig-paren">(</span><em class="sig-param">data_file</em>, <em class="sig-param">test_fraction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">catboost_data_engine.</code><code class="sig-name descname">RealDataEngineCatboost</code><span class="sig-paren">(</span><em class="sig-param">data_file</em>, <em class="sig-param">protocol_file</em>, <em class="sig-param">test_fraction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li><dl class="simple">
 <dt>Источник данных между real и моделями Catboost</dt><dd><ul>
@@ -229,25 +229,33 @@
 <dt id="catboost_data_engine.RealDataEngineCatboost.test_pool">
 <code class="sig-name descname">test_pool</code><span class="sig-paren">(</span><em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.test_pool" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li><p>Объект Pool - это внутренний формат данных для catboost, DataEngine преобразует данные в этот формат при необходимости можно сохранить в файл</p></li>
+<li><p>Объект Pool - это внутренний формат данных для catboost,         DataEngine преобразует данные в этот формат при необходимости можно сохранить в файл</p></li>
+<li><p>иначе None, если при инициализации класса параметр _test_fraction не задавался и выборка         на тестовую и обучающую не делилась</p></li>
+<li><p>идемпотентно, при повторном вызове не пересобирает пул, возвращает существующий</p></li>
 </ul>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Pool с тестовой выборкой, меткой и категориальными признаками, если тестовая выборка определана,</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>force</strong> – пересобрать пул признаков насильно, прошлый уничтожить, default=False</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pool с тестовой выборкой, меткой и категориальными признаками, если тестовая выборка определана,</p>
 </dd>
 </dl>
-<p>иначе None, если при инизиализации класса</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="catboost_data_engine.RealDataEngineCatboost.train_pool">
 <code class="sig-name descname">train_pool</code><span class="sig-paren">(</span><em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#catboost_data_engine.RealDataEngineCatboost.train_pool" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li><p>Объект Pool - это внутренний формат данных для catboost, DataEngine преобразует данные в этот формат при необходимости можно сохранить в файл</p></li>
+<li><p>Объект Pool - это внутренний формат данных для catboost,         DataEngine преобразует данные в этот формат при необходимости можно сохранить в файл</p></li>
+<li><p>идемпотентно, при повторном вызове не пересобирает пул, возвращает существующий</p></li>
 </ul>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Pool с обучающей выборкой (метка удалена), меткой и категориальными признаками</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>force</strong> – пересобрать пул признаков насильно, прошлый уничтожить, default=False</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pool с обучающей выборкой (метка удалена), меткой и категориальными признаками</p>
 </dd>
 </dl>
 </dd></dl>

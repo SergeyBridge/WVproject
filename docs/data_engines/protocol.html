@@ -601,7 +601,94 @@
 443
 444
 445
-446</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#</span>
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># description: обязательный</span>
 <span class="c1">#  - строка, непустая, описание параметра, в расчетах не участвует, не проверяется</span>
 <span class="c1">#</span>
@@ -618,435 +705,522 @@
 <span class="c1">#</span>
 <span class="c1"># error: обязательный - возвращаемая ошибка сервера, содержит имя параметра, для которого вызвана, например order_id, и причину, напр. typerror</span>
 <span class="c1">#</span>
+<span class="c1"># using: обязательный - используется для расчета модели. Это поле заполняется мной (С.Н.),</span>
+<span class="c1">#</span>
 
 <span class="nt">protocol</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="kt">!fields</span>
+  <span class="kt">!fields</span>
     <span class="nt">order_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_created_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_processed_user_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_confirmed_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_confirmed_user_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_callback_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_lead_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_operator_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_rejection_reason</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_invalid_reason</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_country</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_country_ip</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_country_phone</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_region</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_city</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_delivery_price</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">num</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_payment_method</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_phone_geocoder</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_phone_valid</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_status_order</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_is_valid</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_is_call_fail</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_valid_error</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_webmaster_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_offer_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_landing_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_prelanding_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_money</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_count_call</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_last_call_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_count_callback</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_good_count</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_phone_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_utm_source</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_utm_medium</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_utm_campaign</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_utm_content</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_utm_term</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_is_prepay</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_landing_price</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">num</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_landing_currency</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_time_before_open_form</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_account_manager_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_order_unique_goods</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_in_stock_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_cancel_in_stock_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_paid_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_return_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_good_count</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">num</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+    <span class="nt">stat_delivery_is_paid</span><span class="p">:</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">num</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+    <span class="nt">stat_delivery_is_return</span><span class="p">:</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">num</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_delivery_status</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_manager_id</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_exception</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_finance_revise_ts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_discount</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_discount_eur</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_operator_status</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">stat_delivery_google_and_operator_address_match</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_name</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_surname</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_additional_phone</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_age</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_age_unknown</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_client_sex</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">str</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_country</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_region</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_city</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_street</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_house</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_housing</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_apartment</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
     <span class="nt">order_address_zip_code</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
-      <span class="p p-Indicator">-</span> <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">min_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">max_val</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">error</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
+      <span class="nt">using</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Na</span>
 </pre></div>
 </td></tr></table></div>
 </div>
