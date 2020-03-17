@@ -25,301 +25,301 @@
 protocol:
   !fields
     order_id:
-      description: Na
+      description: ID заказа
       type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_created_ts:
-      description: Na
+      description: Дата создания
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_processed_user_id:
-      description: Na
+      description: Кто обработал
       type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_confirmed_ts:
-      description: Na
+      description: Дата подтверждения
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_confirmed_user_id:
-      description: Na
+      description: Кто подтвердил
       type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_callback_ts:
-      description: Na
+      description: Дата когда перезвонить клиенту
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_lead_ts:
-      description: Na
+      description: Дата лида
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_operator_id:
-      description: Na
+      description: Оператор
       type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_rejection_reason:
-      description: Na
+      description: Причина отклонения
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_invalid_reason:
-      description: Na
+      description: Причина невалида
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_country:
-      description: Na
+      description: Страна
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_country_ip:
-      description: Na
+      description: Страна IP
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_country_phone:
-      description: Na
+      description: Страна телефона
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_region:
-      description: Na
+      description: Регион
       type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_city:
-      description: Na
+      description: Город
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_delivery_price:
-      description: Na
+      description: Цена доставки
       type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_payment_method:
-      description: Na
-      type: Na
+      description: Способ оплаты
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_phone_geocoder:
-      description: Na
+      description: Гео по телефонному номеру
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_phone_valid:
-      description: Na
-      type: Na
+      description: Валидный нормер телефона
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_status_order:
-      description: Na
-      type: Na
+      description: Статус заказа
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_is_valid:
-      description: Na
-      type: Na
+      description: Валидный
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_is_call_fail:
-      description: Na
-      type: Na
+      description: Не удалось дозвониться
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_valid_error:
-      description: Na
-      type: Na
+      description: Ошибка валидации
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_webmaster_id:
-      description: Na
-      type: Na
+      description: Вебмастер
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_offer_id:
-      description: Na
-      type: Na
+      description: Оффера
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_landing_id:
-      description: Na
-      type: Na
+      description: Лендинг
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_prelanding_id:
-      description: Na
-      type: Na
+      description: Прелендинг
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_money:
-      description: Na
-      type: Na
+      description: Итоговая стоимость
+      type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_count_call:
-      description: Na
-      type: Na
+      description: Количество звонков
+      type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_last_call_ts:
-      description: Na
+      description: Дата последнего звонка
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_count_callback:
-      description: Na
+      description: Na Description absent
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_good_count:
-      description: Na
-      type: Na
+      description: Кол-во осн товара
+      type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_phone_id:
-      description: Na
-      type: Na
+      description: Id телефона
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_utm_source:
-      description: Na
-      type: Na
+      description: Utm Source
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_utm_medium:
-      description: Na
-      type: Na
+      description: Utm Medium
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_utm_campaign:
-      description: Na
-      type: Na
+      description: Utm Campaign
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_utm_content:
-      description: Na
+      description: Utm Content
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_utm_term:
-      description: Na
+      description: Utm Term
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_is_prepay:
-      description: Na
-      type: Na
+      description: Предоплата?
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_landing_price:
-      description: Na
+      description: Цена на лендинге
       type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_landing_currency:
-      description: Na
-      type: Na
+      description: Валюта лендинга
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_time_before_open_form:
-      description: Na
+      description: Время до открытия формы
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_order_account_manager_id:
-      description: Na
+      description: Аккаунт-менеджер
       type: str
       min_val: Na
       max_val: Na
@@ -333,77 +333,78 @@ protocol:
       error: Na
       using: Na
     stat_delivery_in_stock_ts:
-      description: Na
+      description: Отправляется
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_cancel_in_stock_ts:
-      description: Na
+      description: Отменен
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_paid_ts:
-      description: Na
+      description: Оплачен
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_return_ts:
-      description: Na
+      description: Возврат
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_good_count:
-      description: Na
+      description: Кол-во товара
       type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_is_paid:
-      description: Na
+      description: Оплачен
       type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_is_return:
-      description: Na
+      description: Возврат
       type: num
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_delivery_status:
-      description: Na
+      description: Статус доставки enum ('waiting', 'not_ready', 'wait_to_stock', 'in_stock', \
+                   'delivered', 'paid', 'return', 'send_cc', 'cancel_cc')
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_manager_id:
-      description: Na
-      type: Na
+      description: Менеджер
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_exception:
       description: Na
-      type: Na
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_finance_revise_ts:
-      description: Na
+      description: Дата загрузки отчета
       type: Na
       min_val: Na
       max_val: Na
@@ -417,22 +418,22 @@ protocol:
       error: Na
       using: Na
     stat_delivery_discount_eur:
-      description: Na
+      description: Скидка (EUR)
       type: Na
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_operator_status:
-      description: Na
-      type: Na
+      description: Статус заказа Оператора
+      type: str
       min_val: Na
       max_val: Na
       error: Na
       using: Na
     stat_delivery_google_and_operator_address_match:
-      description: Na
-      type: Na
+      description: Совпадение с Google Address
+      type: str
       min_val: Na
       max_val: Na
       error: Na
